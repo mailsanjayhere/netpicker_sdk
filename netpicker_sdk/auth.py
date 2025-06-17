@@ -24,6 +24,7 @@ class Auth:
         )
         response.raise_for_status()
         data = response.json()
+        print("[DEBUG] Login response:", data)
         self.token = data["access_token"]
         self.expiry = time.time() + 3600  # assume 1 hour expiry
 
